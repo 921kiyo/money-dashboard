@@ -1,0 +1,45 @@
+<%# the template for the login form. This template is rendered by the get '/sessions/login' route in the controller. The form on this page POSTs to the post '/sessions' route. %>
+<div class="container-fluid background_image">
+  <div class="row">
+    <div class="col-md-6">
+      <% if current_user == nil%>
+      <h2 class="title1">Welcome to Money Cashboard!</h2>
+      <% else %>
+      <h2 class="title1">Welcome, <%=@user.name%>!</h2>
+      <% end %>
+      <img class="stock_market_logo" src="http://mcxcapitalviatips.com/wp-content/uploads/2014/08/chart_iconcopy.jpg" alt="stock market">
+      <p class="lead">Money Dashboard is a personal financial assistant that shows you exactly where money goes and helps you make better decisions.</p>
+      <% if current_user == nil%>
+      <div class="container-fluid signup_form">
+        <div class="row">
+          <div class="col-md-6">
+            <form action="/sessions" method="post">
+              <div class="form-group">
+                <h3 class="form_name"><u>Log in</u></h3><br>
+                <label for="exampleInputEmail1 email" class="form_name">
+                  Email
+                </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+              </div>
+              <div class="form-group">            
+                <label for="exampleInputPassword1 password" class="form_name">
+                  Password
+                </label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+              </div>
+              <button type="submit" class="btn btn-default" class="form_name">
+                Log in!
+              </button>
+              <% if @user == nil %>
+              <p class="error"><%= @error %></p>
+              <% end %>
+            </form>
+            <a href="/">Don't have an account? Sign up!</a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>

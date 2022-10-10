@@ -1,0 +1,72 @@
+              <div>
+                <p>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6"> 
+            </div>
+            <div class="col-md-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>
+                      Date
+                    </th>
+                    <th class="amount_adjust">
+                      Amount
+                    </th>
+                    <th>
+                      Category
+                    </th>
+                    <th>
+                      Store
+                    </th>
+                    <th class="memo_adjust">
+                      Memo
+                    </th>
+                  </tr>
+                </thead>
+                <% @transactions.each do |transaction| %> 
+                <tbody>
+                  <tr>
+                    <td>
+                      <%= transaction.dates %>
+                    </td>
+                    <td>
+                      £<%= transaction.amount %>
+                    </td>
+                    <td>
+                      <%= transaction.category.category_name  %>
+                    </td>
+                    <td>
+                      <%= transaction.merchant.merchant_name  %>
+                    </td>
+                    <td>
+                      <%= transaction.memo %>
+                    </td>
+                    <td class="edit-icon">
+                      <a href="/transactions/<%= transaction.id %>/edit">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                      </td>
+                      <td class="edit-icon">
+                        <form method="post" action="/transactions/<%= transaction.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this?')">
+                          <button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>   
+                        </form>
+                      </td>  
+                    </tr>
+                  </tbody>
+                  <% end %>
+                </table>
+                <div class="total-expenditure">
+                  <h4 class="total-expenditure-text">Total expenditure: <b><u>£<%= @analysis.total() %></u></b></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

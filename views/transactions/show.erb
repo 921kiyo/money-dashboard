@@ -1,0 +1,9 @@
+<div>
+  <h1>Transaction detail</h1>
+  <h2>Amount spent: <%= @transaction.amount %></h2>
+  <h2>Memo: <%= @transaction.memo %></h2>
+  <h2>Date: <%= @transaction.dates %></h2>
+  <form action="/transactions/<%= @transaction.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
+</div>

@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6"> 
+
+              <div class="form filter-form"><br>
+                <form action="/transactions" method="post">
+                    <label for="amount">Amount(£):</label>
+                    <input type="number" name="amount" class="amount_input">
+                    <label for="dates">Dates:</label>
+                    <input type="date" name="dates"><br>
+                    <div class="dropdown_position">
+                      <div class="dropdown_position_inside1">
+                        <label for="category_id" class="category_title">Category</label>
+                        <select name="category_id" class="form-control filter-dropdown">
+                          <% @categories.each do |category| %>
+                          <option value="<%=category.id%>"><%=category.category_name %></option>
+                          <% end %>
+                        </select>
+                        <br>
+                        <a href="/categories/new">Add new category => </a> <br>
+                      </div>
+                      <div class="dropdown_position_inside2">
+                        <label for="merchant_id" class="store_title">Store</label>
+                        <select name="merchant_id" class="form-control filter-dropdown">
+                          <% @merchants.each do |merchant| %>
+                          <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                          <% end %>
+                        </select><br>
+                        <a href="/merchants/new">Add new store => </a><br>  
+                      </div>  
+                    </div>
+                    <br>
+                    
+                      <label for="memo">Memo:</label><br>
+                      <textarea name="memo" cols="30" rows="5"></textarea><br>
+                      <input type="text" name="user_id" value="<%= @user.id%>" style="visibility: hidden;">
+                    
+                    <input type="submit" class="btn btn-primary btn-sm filter-button" value="Add transaction!">
+                  </form>
+              </div>
+
+              <%= erb(:"transactions/filter") %>

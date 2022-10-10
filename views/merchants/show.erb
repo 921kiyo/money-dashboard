@@ -1,0 +1,7 @@
+<div>
+  <h1>Merchant detail</h1>
+  <h2>Date: <%= @merchant.merchant_name %></h2>
+  <form action="/merchants/<%= @merchant.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
+</div>

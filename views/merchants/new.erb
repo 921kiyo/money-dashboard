@@ -1,0 +1,39 @@
+
+<div class="container-fluid">
+  <div class="row filter_form">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6"> 
+              <div class="form list-form"><br>
+                <h3><u>Add new Store</u></h3><br>
+                <form action="/merchants" method="post">
+                  <label for="merchant_name">Merchant name</label>
+                  <input type="text" name="merchant_name"> 
+                  <input type="submit" class="btn btn-primary" value="Add !">
+                </form>
+                <% @merchants.each do |merchant| %>
+                <ul>
+                  <li>
+                  <div class="list-adjust">
+                    <p><%= merchant.merchant_name %></p>
+                  </div>
+                  <div class="list-adjust">
+                    <form action="/merchants/<%= merchant.id %>/delete" method="post" onsubmit="return confirm('Are you sure you want to delete this?')">
+                      <button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </form>
+                  </div>
+                  </li>
+                </ul>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

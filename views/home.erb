@@ -1,0 +1,22 @@
+<div class="container-fluid background_image">
+  <div class="row">
+    <div class="col-md-6">
+      <% if current_user == nil%>
+      <h2 class="title1">Welcome to Money Cashboard!</h2>
+      <% else %>
+      <h2 class="title1">Welcome, <%= @user.name %>!</h2>
+      <% end %>
+      <img class="stock_market_logo" src="/images/logo.jpg" alt="stock market">
+      <p class="lead">Money Dashboard is a personal financial assistant that shows you exactly where money goes and helps you make better decisions.</p>
+      <% if current_user == nil%>
+      <div class="container-fluid signup_form">
+          <%= erb(:'/registrations/signup') %>
+          <% if @name == "" || @email == "" || @password == "" %>
+          <p class="error"><%= @error %></p>
+          <% end %>
+      </div>
+      <% end %>
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>

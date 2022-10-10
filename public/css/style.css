@@ -1,0 +1,267 @@
+ 
+/*Home page*/
+.background_image{
+    background-image: url("../images/background_image.jpg");
+    height:100%;
+    min-height:600px;
+}
+.title1{
+    background-color: rgb(30,30,30);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    padding: 5px 15px 8px 10px;
+}
+.lead{
+    background-color:rgba(255,255,255, 0.85);
+    padding:10px;
+    margin-top:10px;
+}
+
+.stock_market_logo {
+    height:60px;
+    width:60px;
+    background-color: yellowgreen;
+}
+
+.signup_form{
+    background-color: #383737;
+    margin-bottom: 20px;
+}
+
+/*Navigation menu bar*/
+
+.menu {
+    height: 54px;
+    background-color: #333;
+}
+
+
+.menu_bar_ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menu_bar_li {
+    float: left;
+}
+
+.menu_bar_li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu_bar_li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.right_menu{
+    float:right;
+}
+.setting_dropdown{
+    margin-right: 20px;
+}
+
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    text-align: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    position: relative;
+    z-index: 1000000;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown_option{
+    background-color: #333;
+    color: white;
+}
+
+
+/*Button*/
+
+.btn {
+    border: 0px;
+    /*background-color: transparent;*/
+}
+
+/*Admin form*/
+.form_name{
+    color:white;
+}
+
+/*Chart description*/
+.chart_description{
+    position:relative;
+    display:inline-block;
+}
+
+.pie_chart_div{
+    display:inline-block;
+}
+
+
+/*Transaction List*/
+.table-bordered{
+    background-color:rgba(255,255,255, 0.85);
+    font-family: 'Oxygen', sans-serif;
+}
+.amount-adjust{
+    width:20px;
+}
+.memo_adjust{
+    width:300px;
+}
+
+.filter-form{
+    width:550px;
+    padding: 10px;
+}
+
+.filter-button {
+    float:right;
+    width:100px;
+}
+
+.filter-dropdown{
+    width:150px;
+    height:30px;
+    display: inline-block;
+}
+
+.total-expenditure{
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-bottom:20px;
+    background-color: rgba(255,255,255, 0.85);
+    border-radius: 20px;
+    border-style: groove;
+}
+
+.total-expenditure-text{
+    padding:5px;
+}
+
+.edit-icon{
+    width:10px;
+    vertical-align: bottom;
+}
+
+/*New Transaction*/
+.dropdown_position{
+    display: inline-flex;
+}
+.dropdown_position_inside1{
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+.dropdown_position_inside2{
+}
+
+.category_title{
+    margin-right:10px;
+}
+
+.amount_input{
+    margin-right:6px;
+}
+
+.list-form{
+    padding:10px;
+    width:280px;
+}
+
+.list-adjust{
+    display:inline-flex;
+}
+
+/*Edit transaction*/
+.edit-transaction-button{
+    margin-bottom: 1px;
+}
+
+/*Login form*/
+
+.form{
+    background-color:rgba(255,255,255, 0.85);
+
+}
+
+/*Contact form*/
+
+.contact_form{
+    width:250px;
+}
+
+/*Pie Chart*/
+.pie_chart{
+    width:300px;
+
+}
+
+.form_pie_chart{
+    background-color:rgba(255,255,255, 0.85);
+    width:700px;
+}
+
+.choice{
+    font-size:22px;
+    margin:5px;
+}
+
+/*Flash*/
+
+.flash {
+  width: 600px;
+  padding: 5px;
+  font-weight: bold;
+  margin: 20px;
+  color: $red;
+  style="background-color:rgba(0, 0, 0, 0.0);
+}
+
+/*Error*/
+.error{
+    color:red;
+}

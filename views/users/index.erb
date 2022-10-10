@@ -1,0 +1,43 @@
+
+<div class="container-fluid">
+  <div class="row filter_form">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6"> 
+              <div class="form filter-form"><br>
+              <h4><u>Filter Transaction</u></h4>
+                <form action="/users/filter" method="get"><i class="fa fa-filter" aria-hidden="true"></i>
+
+                  From:<input type="date" name="start_date">
+                  To:<input type="date" name="end_date">
+                  <div class="filter-dropdown">
+                    <select name="category_id" class="filter-dropdown form-control">
+                      <option disabled selected value> -- select category -- </option>
+                      <% @categories.each do |category| %>
+                      <% if @category_id == category.id %>
+                      <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
+                      <% else  %>
+                      <option value="<%=category.id%>"><%=category.category_name %></option>
+                      <% end %>
+                      <% end %>
+                    </select>
+                  </div>
+                  <div class="filter-dropdown">
+                    <select name="merchant_id" class="filter-dropdown form-control">
+                      <option disabled selected value> -- select store -- </option>
+                      <% @merchants.each do |merchant| %>
+                      <% if @merchant_id == merchant.id %>
+                      <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
+                      <% else  %>
+                      <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                      <% end %>
+                      <% end %>
+                    </select>
+                  </div>
+                  <input type="submit" value="Sort" class="btn btn-primary btn-sm filter-button">
+                </form>
+              </div>
+
+              <%= erb(:"transactions/filter") %>

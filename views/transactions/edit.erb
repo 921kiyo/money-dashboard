@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6"> 
+              <div class="form filter-form"><br>
+                  <div class="form-group">
+                    <h3><u>Edit transaction</u></h3><br>
+                    <form action="/transactions/<%= @transaction.id %>" method="post">
+                      <label for="amount">Amount(£):</label>
+                      <input class="amount_input" type="number" name="amount" value="<%= @transaction.amount %>">
+                      <label for="dates">Dates:</label>
+                      <input type="date" name="dates" value="<%= @transaction.dates %>"><br>
+                      <input type="text" style="display:none;" name="user_id" value="<%= @transaction.user_id%>">
+                      <div class="dropdown_position">
+                        <div class="dropdown_position_inside1">
+                          <label for="category_id" class="category_title">Category</label>
+
+                          <select name="category_id" class="form-control filter-dropdown">
+                            <% @categories.each do |category| %>
+                            <option value="<%=category.id%>"><%=category.category_name %></option>
+                            <% end %>
+                          </select><br>
+                        </div>
+                        <div class="dropdown_position_inside2">
+                          <label for="merchant_id" class="store_title">Store</label>
+                          <select name="merchant_id" class="form-control filter-dropdown">
+                            <% @merchants.each do |merchant| %>
+                            <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                            <% end %>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                       <label for="memo">Memo:</label><br>
+                       <textarea name="memo" cols="30" rows="5"><%= @transaction.memo %></textarea><br>
+                     </div>
+                     <div>
+                       <input type="submit" class="btn btn-primary btn-sm edit-transaction-button" value="Edit transaction!">
+                     </form>
+                   </div>    
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>

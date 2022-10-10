@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="project/public/css/font-awesome.min.css">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:700" rel="stylesheet">
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="/js/app.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="menu">
+    <ul class='menu_bar_ul'>
+      <li class='menu_bar_li'><a href="/">Home</a></li>
+      <li class='menu_bar_li'><a href="/transactions/new">New Transaction</a></li>
+      <li class='menu_bar_li'><a href="/users/index">Transaction Summary</a></li>
+      <li class='menu_bar_li'><a href="/transactions/analysis">Analysis</a></li>  
+    </ul>
+    <div class="right_menu">
+      <ul class="menu_bar_ul">
+      <li class='menu_bar_li setting_dropdown'>
+        <div class="dropdown">
+          <button class="dropbtn">Settings</button>
+          <div class="dropdown-content">
+          <ul>
+            <li class="dropdown_option"><a href="/users/<%= session[:id] %>/show">Account summary</a></li>
+            <li class="dropdown_option"><a href="/contact">Contact us</a></li>
+            <li class="dropdown_option"><a href="#">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <% if current_user == nil%>
+      <li class="menu_bar_li auth_link"><a href="/sessions/login">Login</a></li>
+      <% else %>
+      <li class="menu_bar_li auth_link"><a href="/sessions/logout">Logout</a></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <%= styled_flash %>
+      <div class="background_image">
+        <%= yield %>
+      </div>
+  </div>
+</body>
+</html>
